@@ -1,5 +1,4 @@
 "use client";
-// components/Navbar.tsx
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -11,7 +10,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Initially visible
+  const [prevScrollY, setPrevScrollY] = useState(0); // Previous scroll position
   const router = usePathname();
 
   const handleToggle = () => {
@@ -19,30 +19,32 @@ const Navbar = () => {
   };
 
   const isActive = (path: string) => router === path;
+
   useEffect(() => {
-    // Function to handle scroll events
     const handleScroll = () => {
-      const isTop = window.scrollY === 0; // Check if user is at the top of the page
-      setIsVisible(!isTop); // Set visibility based on scroll position
+      const currentScrollY = window.scrollY;
+      setIsVisible(currentScrollY < prevScrollY || currentScrollY === 0); // Show Navbar when scrolling up or at top
+      setPrevScrollY(currentScrollY);
     };
 
-    // Attach scroll event listener
+    // Initial check for visibility on mount
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up function to remove scroll event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [prevScrollY]);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: isVisible ? 0 : -100 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
-      className="bg-[#6F4E37]/50 text-white fixed top-0 w-full"
+      className="bg-[#6F4E37]/50 text-white fixed top-0 w-full transition-all duration-500"
     >
-      <div className=" max-w-[1200px] mx-auto px-2 sm:px-6 lg:px-8">
+      <div className="max-w-[1200px] mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-[100] w-full">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
@@ -251,61 +253,17 @@ const Navbar = () => {
               About
             </span>
           </Link>
-          <div className="relative">
-            <button
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+          <Link href="/services">
+            <span
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
                 isActive("/services")
                   ? "bg-gray-900"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
               }`}
             >
               Services
-            </button>
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{
-                height: isServicesOpen ? "auto" : 0,
-                opacity: isServicesOpen ? 1 : 0,
-              }}
-              transition={{ duration: 0.3 }}
-              className={`pl-4 mt-1 overflow-hidden`}
-            >
-              <Link href="/services/service1">
-                <span
-                  className={`block px-4 py-2 text-sm ${
-                    isActive("/services/service1")
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                  }`}
-                >
-                  Service 1
-                </span>
-              </Link>
-              <Link href="/services/service2">
-                <span
-                  className={`block px-4 py-2 text-sm ${
-                    isActive("/services/service2")
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                  }`}
-                >
-                  Service 2
-                </span>
-              </Link>
-              <Link href="/services/service3">
-                <span
-                  className={`block px-4 py-2 text-sm ${
-                    isActive("/services/service3")
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                  }`}
-                >
-                  Service 3
-                </span>
-              </Link>
-            </motion.div>
-          </div>
+            </span>
+          </Link>
           <Link href="/contact">
             <span
               className={`block px-3 py-2 rounded-md text-base font-medium ${
