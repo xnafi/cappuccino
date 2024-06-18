@@ -1,6 +1,6 @@
 "use client";
 // components/Navbar.tsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,6 +11,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const router = usePathname();
 
   const handleToggle = () => {
@@ -18,9 +19,29 @@ const Navbar = () => {
   };
 
   const isActive = (path: string) => router === path;
+  useEffect(() => {
+    // Function to handle scroll events
+    const handleScroll = () => {
+      const isTop = window.scrollY === 0; // Check if user is at the top of the page
+      setIsVisible(!isTop); // Set visibility based on scroll position
+    };
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up function to remove scroll event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="bg-white/10 text-white">
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: isVisible ? 0 : -100 }}
+      transition={{ ease: "easeOut", duration: 0.5 }}
+      className="bg-[#6F4E37]/50 text-white fixed top-0 w-full"
+    >
       <div className=" max-w-[1200px] mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-[100] w-full">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -320,7 +341,7 @@ const Navbar = () => {
           </Link>
         </div>
       </motion.div>
-    </nav>
+    </motion.nav>
   );
 };
 
