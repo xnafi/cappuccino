@@ -15,7 +15,20 @@
     --background-end-rgb: 150, 110, 70;
   }
 }
-
+@layer utilities {
+  .headings {
+    @apply text-2xl md:text-4xl lg:text-4xl xl:text-6xl 2xl:text-6xl font-bold uppercase;
+  }
+  .sub-heading {
+    @apply text-base md:text-xl lg:text-xl font-semibold uppercase;
+  }
+  .primary-text {
+    @apply text-sm md:text-base font-bold text-yellow-950;
+  }
+  .buttonPrimary {
+    @apply text-sm md:text-lg border transition-transform transform hover:shadow-md;
+  }
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -32,6 +45,5 @@ body {
   }
 }
 h1 {
-color: antiquewhite;
+  color: antiquewhite;
 }
-
