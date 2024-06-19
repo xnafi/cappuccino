@@ -23,7 +23,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setIsVisible(currentScrollY < prevScrollY || currentScrollY === 0); // Show Navbar when scrolling up or at top
+      setIsVisible(currentScrollY > prevScrollY || currentScrollY > 10); // Show Navbar when scrolling up or at top
       setPrevScrollY(currentScrollY);
     };
 
@@ -40,7 +40,7 @@ const Navbar = () => {
   return (
     <motion.nav
       initial={{ y: -100 }}
-      animate={{ y: isVisible ? 0 : -100 }}
+      animate={{ y: isVisible ? 0 : -200 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
       className="bg-[#6F4E37]/50 text-white fixed top-0 w-full transition-all duration-500"
     >
