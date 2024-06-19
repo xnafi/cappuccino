@@ -10,8 +10,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true); // Initially visible
-  const [prevScrollY, setPrevScrollY] = useState(0); // Previous scroll position
+  const [isVisible, setIsVisible] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
   const router = usePathname();
 
   const handleToggle = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setIsVisible(currentScrollY > prevScrollY || currentScrollY > 10); // Show Navbar when scrolling up or at top
+      setIsVisible(currentScrollY < prevScrollY || currentScrollY > 100);
       setPrevScrollY(currentScrollY);
     };
 
@@ -40,7 +40,7 @@ const Navbar = () => {
   return (
     <motion.nav
       initial={{ y: -100 }}
-      animate={{ y: isVisible ? 0 : -200 }}
+      animate={{ y: isVisible ? 0 : -100 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
       className="bg-[#6F4E37]/50 text-white fixed top-0 w-full transition-all duration-500"
     >
