@@ -2,39 +2,38 @@
 import { motion, Variants } from "framer-motion";
 import { ReactNode } from "react";
 
-interface FadeInProps {
+interface SlideInProps {
   children: ReactNode;
   delay?: number;
 }
 
-const fadeIn: Variants = {
+const slideIn: Variants = {
   initial: {
     opacity: 0,
-    y: 100,
+    x: -100, // Start position outside the viewport on the left
   },
-  animate: (custom: number) => ({
+  animate: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
-      delay: custom,
       duration: 0.8,
       ease: [0.42, 0, 0.58, 1],
     },
-  }),
+  },
 };
 
-const FadeIn: React.FC<FadeInProps> = ({ children, delay = 0 }) => {
+const SlideIn: React.FC<SlideInProps> = ({ children, delay = 0 }) => {
   return (
     <motion.div
       initial="initial"
       whileInView="animate"
-      variants={fadeIn}
+      variants={slideIn}
       custom={delay}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true }} // Adjust threshold as needed
     >
       {children}
     </motion.div>
   );
 };
 
-export default FadeIn;
+export default SlideIn;

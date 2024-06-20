@@ -17,10 +17,10 @@
 }
 @layer utilities {
   .headings {
-    @apply text-2xl md:text-4xl lg:text-4xl xl:text-6xl 2xl:text-6xl font-bold uppercase;
+    @apply text-2xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-bold uppercase;
   }
   .sub-heading {
-    @apply text-base md:text-xl lg:text-xl font-semibold uppercase;
+    @apply text-base md:text-xl lg:text-xl uppercase;
   }
   .primary-text {
     @apply text-sm md:text-base font-bold text-yellow-950;

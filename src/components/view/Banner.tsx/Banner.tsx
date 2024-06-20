@@ -6,7 +6,7 @@ import FadeIn from "@/utils/FadeIn";
 
 const Banner: React.FC = () => {
   return (
-    <>
+    <div className="w-full">
       <div className={`${style.bgWrap}`}>
         <Image
           alt="Banner"
@@ -40,7 +40,7 @@ const Banner: React.FC = () => {
           </FadeIn>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
