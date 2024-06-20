@@ -21,7 +21,7 @@ const Banner: React.FC = () => {
         />
       </div>
       <div
-        className={`${style.bgText} bg-black/30 text-white flex justify-center items-center flex-col`}
+        className={`${style.bgText} bg-black/30 text-white flex justify-center items-center flex-col  px-2 md:px-4`}
       >
         <div className="flex justify-center items-center flex-col max-w-[1200px] space-y-5">
           <FadeIn delay={0.05}>
@@ -34,7 +34,7 @@ const Banner: React.FC = () => {
             </span>
           </FadeIn>
           <FadeIn delay={1}>
-            <button className="cursor-pointer uppercase bg-[#6F4E37] font-bold px-10 py-2 border transition-all duration-300 ease-in-out hover:shadow-md transform hover:scale-105">
+            <button className="cursor-pointer uppercase bg-[#6F4E37] font-bold px-10 py-2 border transition-all duration-300 ease-in-out hover:shadow-md transform hover:scale-105 !z-0">
               EXPLORE
             </button>
           </FadeIn>

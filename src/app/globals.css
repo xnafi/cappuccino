@@ -23,7 +23,7 @@
     @apply text-base md:text-xl lg:text-xl uppercase;
   }
   .primary-text {
-    @apply text-sm md:text-base font-bold text-yellow-950;
+    @apply text-sm md:text-base font-bold text-white/50;
   }
   .buttonPrimary {
     @apply text-sm md:text-lg border transition-transform transform hover:shadow-md;
