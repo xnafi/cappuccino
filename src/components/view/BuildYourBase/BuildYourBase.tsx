@@ -3,7 +3,7 @@ import Image from "next/image";
 import img1 from "../../../../public/assets/buildYourBase/img1.jpg";
 import img2 from "../../../../public/assets/buildYourBase/img2.jpg";
 import img3 from "../../../../public/assets/buildYourBase/img3.jpg";
-import LearnMore from "@/utils/LeanMoreButton";
+import PrimaryButton from "../../../utils/PrimaryButton";
 
 export default function BuildYourBase() {
   return (
@@ -24,7 +24,7 @@ export default function BuildYourBase() {
           <SlideIn delay={0.9}>
             <div className="flex flex-col items-center space-y-2">
               <Image src={img1} width={500} height={400} alt="" />
-              <div className="self-start space-y-4">
+              <div className="self-start md:self-center lg:self-start space-y-4 w-full md:w-[67%] lg:w-full">
                 <span className="sub-heading space-y-2">
                   PLACES TO GET LOST
                 </span>
@@ -34,7 +34,7 @@ export default function BuildYourBase() {
                   partem ei est. Eos ei nisl graecis, vix aperiri consequat an.
                   Eius lorem tincidunt vix atle.
                 </p>
-                <LearnMore text="Learn More" />
+                <PrimaryButton text="Learn More" />
               </div>
             </div>
           </SlideIn>
@@ -42,7 +42,7 @@ export default function BuildYourBase() {
           <SlideIn delay={0.9}>
             <div className="flex flex-col items-center  space-y-2">
               <Image src={img2} width={500} height={400} alt="" />
-              <div className="self-start space-y-4">
+              <div className="self-start space-y-4 w-full md:w-[67%] lg:w-full">
                 <span className="sub-heading space-y-2">
                   BEST COFFEE FLAVORS
                 </span>
@@ -52,7 +52,7 @@ export default function BuildYourBase() {
                   partem ei est. Eos ei nisl graecis, vix aperiri consequat an.
                   Eius lorem tincidunt vix atle.
                 </p>
-                <LearnMore text="Learn More" />
+                <PrimaryButton text="Learn More" />
               </div>
             </div>
           </SlideIn>
