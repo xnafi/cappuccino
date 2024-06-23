@@ -7,8 +7,8 @@ import { coffeeMenu } from "@/data/CoffeeMenu";
 
 export default function OurMenu() {
   return (
-    <div className=" flex h-[140vh] w-[100vw]">
-      <div className={`${style.bgWrap}`}>
+    <div className=" flex w-[100vw]">
+      <div className={`${style.bgWrap} h-[310vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh]`}>
         <Image
           alt="Banner"
           src={img1}
@@ -22,7 +22,7 @@ export default function OurMenu() {
         />
       </div>
       <div
-        className={`${style.bgText} bg-black/80 text-white flex flex-col  px-2 md:px-4 h-[140vh] items-center justify-center`}
+        className={`${style.bgText} bg-black/80 text-white flex flex-col  px-2 md:px-4 h-[310vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh] w-full items-center justify-center`}
       >
         <div className="flex flex-col space-y-2 text-center">
           <FadeIn delay={0.05}>
@@ -32,29 +32,38 @@ export default function OurMenu() {
             <span className="heading2">FAVORITE COFFEE FLAVOURS</span>
           </FadeIn>
         </div>
-        <div className="max-w-[1400px] space-y-3 mt-10">
-          <div className="w-full flex h-full flex-col lg:flex-row lg:space-y-0 lg:space-x-5">
-            <div className="border rounded-sm w-full h-full lg:w-[100%]">
-              {/* menu 1 */}
-              <span className="sub-heading">Menu 1</span>
-              <div className="flex flex-col space-y-2 text-left w-full">
+        <div className="space-y-3 mt-10 w-full max-w-[1400px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-4 justify-center">
+            {/* menu 1 */}
+            <div className="border rounded-sm p-3 md:p-5 md:px-4 flex flex-col space-y-2 col-span-1 lg:col-span-6">
+              <span className="heading2 py-4 text-center">Menu 1</span>
+              <div className="flex flex-col space-y-10 text-left w-full">
                 {coffeeMenu.slice(0, 8).map((item) => {
                   return (
                     <div
-                      className="grid grid-cols-3 justify-between p-6"
+                      className="grid grid-cols-4 justify-between"
                       key={item.id}
                     >
-                      <div className="border flex-nowrap w-full">
+                      {/* name and image */}
+                      <div className=" col-span-2 space-x-1 flex-nowrap flex flex-col w-full md:flex-row space-y-1">
                         <span className="text-left uppercase">
-                          name : {item.name}
+                          <Image
+                            src={item.image}
+                            width={100}
+                            height={100}
+                            alt=""
+                          />
+                        </span>
+                        <span className="text-left uppercase">
+                          {item.name.slice(0, 10)}
                         </span>
                       </div>
-                      <div className="border flex-nowrap w-full">
-                        <span className="text-left border-b-3"></span>
-                      </div>
-                      <div className="border flex-nowrap w-full">
-                        <span className="text-left uppercase">
-                          name : {item.name}
+                      {/* border */}
+                      <div className=" flex-nowrap border-t-2 mt-3"></div>
+                      {/* price */}
+                      <div className=" flex-nowrap w-full text-right">
+                        <span className="text-left uppercase text-wrap">
+                          price : {item.price}
                         </span>
                       </div>
                     </div>
@@ -63,13 +72,37 @@ export default function OurMenu() {
               </div>
             </div>
             {/* menu 2 */}
-            <div className="border rounded-sm w-full lg:w-[100%] h-full">
-              <span className="sub-heading">Menu 2</span>
-              <div className="flex flex-col space-y-3 text-left w-full h-full">
-                {coffeeMenu.slice(9, 18).map((item) => {
+            <div className="border rounded-sm p-3 md:p-5 md:px-4 flex flex-col space-y-2 col-span-1 lg:col-span-6">
+              <span className="heading2 py-4 text-center">Menu 2</span>
+              <div className="flex flex-col space-y-10 text-left w-full">
+                {coffeeMenu.slice(9, 17).map((item) => {
                   return (
-                    <div key={item.id}>
-                      <span className="text-left">name: {item.name}</span>
+                    <div
+                      className="grid grid-cols-4 justify-between"
+                      key={item.id}
+                    >
+                      {/* name and image */}
+                      <div className=" col-span-2 space-x-1 flex-nowrap flex flex-col w-full md:flex-row space-y-1">
+                        <span className="text-left uppercase">
+                          <Image
+                            src={item.image}
+                            width={100}
+                            height={100}
+                            alt=""
+                          />
+                        </span>
+                        <span className="text-left uppercase">
+                          {item.name.slice(0, 10)}
+                        </span>
+                      </div>
+                      {/* border */}
+                      <div className=" flex-nowrap border-t-2 mt-3"></div>
+                      {/* price */}
+                      <div className=" flex-nowrap w-full text-right">
+                        <span className="text-left uppercase text-wrap">
+                          price : {item.price}
+                        </span>
+                      </div>
                     </div>
                   );
                 })}
