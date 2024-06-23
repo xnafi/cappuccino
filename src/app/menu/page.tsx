@@ -1,5 +1,5 @@
 import React from "react";
-import img1 from "../../../../public/assets/OurMenu/menu.jpg";
+import img1 from "../../../public/assets/OurMenu/menu.jpg";
 import Image from "next/image";
 import FadeIn from "@/utils/FadeIn";
 import style from "./style.module.css";

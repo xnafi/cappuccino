@@ -9,7 +9,7 @@ import logo from "../../../../public/assets/logo/logo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [ismenuOpen, setIsmenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const router = usePathname();
@@ -127,12 +127,12 @@ const Navbar = () => {
                 >
                   <button
                     className={`px-3 py-2 rounded-md text-md font-medium ${
-                      isActive("/services")
+                      isActive("/menu")
                         ? "bg-gray-900"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white"
                     }`}
                   >
-                    Services
+                    Menu
                   </button>
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
@@ -144,37 +144,26 @@ const Navbar = () => {
                     className="absolute bg-gray-800 mt-1 w-48 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden"
                   >
                     <div className="py-1">
-                      <Link href="/services/service1">
+                      <Link href="/menu">
                         <span
                           className={`block px-4 py-2 text-sm ${
-                            isActive("/services/service1")
+                            isActive("/menu")
                               ? "bg-gray-900 text-white"
                               : "text-gray-300 hover:bg-gray-700 hover:text-white"
                           }`}
                         >
-                          Service 1
+                          Menu 1
                         </span>
                       </Link>
-                      <Link href="/services/service2">
+                      <Link href="/menu">
                         <span
                           className={`block px-4 py-2 text-sm ${
-                            isActive("/services/service2")
+                            isActive("/menu")
                               ? "bg-gray-900 text-white"
                               : "text-gray-300 hover:bg-gray-700 hover:text-white"
                           }`}
                         >
-                          Service 2
-                        </span>
-                      </Link>
-                      <Link href="/services/service3">
-                        <span
-                          className={`block px-4 py-2 text-sm ${
-                            isActive("/services/service3")
-                              ? "bg-gray-900 text-white"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                          }`}
-                        >
-                          Service 3
+                          Menu 2
                         </span>
                       </Link>
                     </div>
@@ -253,15 +242,15 @@ const Navbar = () => {
               About
             </span>
           </Link>
-          <Link href="/services">
+          <Link href="/menu">
             <span
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive("/services")
+                isActive("/menu")
                   ? "bg-gray-900"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
               }`}
             >
-              Services
+              Menu
             </span>
           </Link>
           <Link href="/contact">
