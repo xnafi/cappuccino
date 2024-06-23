@@ -10,7 +10,7 @@ export default function OurMenu() {
   return (
     <div className=" flex w-[100vw]">
       <div
-        className={`${style.bgWrap} h-[310vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh]`}
+        className={`${style.bgWrap} h-[395vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh]`}
       >
         <Image
           alt="Banner"
@@ -25,13 +25,13 @@ export default function OurMenu() {
         />
       </div>
       <div
-        className={`${style.bgText} bg-black/80 text-white flex flex-col  px-2 md:px-4 h-[310vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh] w-full items-center justify-center`}
+        className={`${style.bgText} bg-black/80 text-white flex flex-col  px-2 md:px-4 h-[395vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh] w-full items-center justify-center`}
       >
         <div className="flex flex-col space-y-2 text-center">
           <FadeIn delay={0.05}>
             <span>What Happens Here</span>
           </FadeIn>
-          <FadeIn delay={0.8}>
+          <FadeIn delay={0.7}>
             <span className="heading2">FAVORITE COFFEE FLAVOURS</span>
           </FadeIn>
         </div>
