@@ -1,0 +1,15 @@
+.bgWrap {
+  position: absolute;
+  height: 140vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+
+  /* background-position: center; */
+}
+
+.bgText {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0%;
+}
