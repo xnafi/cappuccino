@@ -1,8 +1,9 @@
-'use client'
-import { motion, useAnimation, Variants } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+"use client";
+import { AnimatePresence, motion, useAnimation, Variants } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 interface StaggerChildProps {
+  children?: React.ReactNode;
   delay?: number;
 }
 
@@ -17,7 +18,7 @@ const StaggerChild: React.FC<StaggerChildProps> = ({ children, delay = 0 }) => {
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              controls.start('visible');
+              controls.start("visible");
             }
           });
         },
@@ -50,9 +51,9 @@ const StaggerChild: React.FC<StaggerChildProps> = ({ children, delay = 0 }) => {
       initial="hidden"
       animate={controls}
       variants={variants}
-      style={{ width: '100%' }}
+      style={{ width: "100%" }}
     >
-      {children}
+      <AnimatePresence>{children}</AnimatePresence>
     </motion.div>
   );
 };
