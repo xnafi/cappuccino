@@ -4,11 +4,14 @@ import Image from "next/image";
 import FadeIn from "@/utils/FadeIn";
 import style from "./style.module.css";
 import { coffeeMenu } from "@/data/CoffeeMenu";
+import StaggerChild from "@/utils/StaggerChild";
 
 export default function OurMenu() {
   return (
     <div className=" flex w-[100vw]">
-      <div className={`${style.bgWrap} h-[310vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh]`}>
+      <div
+        className={`${style.bgWrap} h-[310vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh]`}
+      >
         <Image
           alt="Banner"
           src={img1}
@@ -38,14 +41,11 @@ export default function OurMenu() {
             <div className="border rounded-sm p-3 md:p-5 md:px-4 flex flex-col space-y-2 col-span-1 lg:col-span-6">
               <span className="heading2 py-4 text-center">Menu 1</span>
               <div className="flex flex-col space-y-10 text-left w-full">
-                {coffeeMenu.slice(0, 8).map((item) => {
-                  return (
-                    <div
-                      className="grid grid-cols-4 justify-between"
-                      key={item.id}
-                    >
+                {coffeeMenu.slice(0, 8).map((item, index) => (
+                  <StaggerChild key={item.id} delay={index * 0.1}>
+                    <div className="grid grid-cols-4 justify-between">
                       {/* name and image */}
-                      <div className=" col-span-2 space-x-1 flex-nowrap flex flex-col w-full md:flex-row space-y-1">
+                      <div className="col-span-2 space-x-1 flex-nowrap flex flex-col w-full md:flex-row space-y-1">
                         <span className="text-left uppercase">
                           <Image
                             src={item.image}
@@ -59,30 +59,27 @@ export default function OurMenu() {
                         </span>
                       </div>
                       {/* border */}
-                      <div className=" flex-nowrap border-t-2 mt-3"></div>
+                      <div className="flex-nowrap border-t-2 mt-3"></div>
                       {/* price */}
-                      <div className=" flex-nowrap w-full text-right">
+                      <div className="flex-nowrap w-full text-right">
                         <span className="text-left uppercase text-wrap">
-                          price : {item.price}
+                          price: {item.price}
                         </span>
                       </div>
                     </div>
-                  );
-                })}
+                  </StaggerChild>
+                ))}
               </div>
             </div>
             {/* menu 2 */}
             <div className="border rounded-sm p-3 md:p-5 md:px-4 flex flex-col space-y-2 col-span-1 lg:col-span-6">
               <span className="heading2 py-4 text-center">Menu 2</span>
               <div className="flex flex-col space-y-10 text-left w-full">
-                {coffeeMenu.slice(9, 17).map((item) => {
-                  return (
-                    <div
-                      className="grid grid-cols-4 justify-between"
-                      key={item.id}
-                    >
+                {coffeeMenu.slice(9, 17).map((item, index) => (
+                  <StaggerChild key={item.id} delay={index * 0.1}>
+                    <div className="grid grid-cols-4 justify-between">
                       {/* name and image */}
-                      <div className=" col-span-2 space-x-1 flex-nowrap flex flex-col w-full md:flex-row space-y-1">
+                      <div className="col-span-2 space-x-1 flex-nowrap flex flex-col w-full md:flex-row space-y-1">
                         <span className="text-left uppercase">
                           <Image
                             src={item.image}
@@ -96,16 +93,16 @@ export default function OurMenu() {
                         </span>
                       </div>
                       {/* border */}
-                      <div className=" flex-nowrap border-t-2 mt-3"></div>
+                      <div className="flex-nowrap border-t-2 mt-3"></div>
                       {/* price */}
-                      <div className=" flex-nowrap w-full text-right">
+                      <div className="flex-nowrap w-full text-right">
                         <span className="text-left uppercase text-wrap">
-                          price : {item.price}
+                          price: {item.price}
                         </span>
                       </div>
                     </div>
-                  );
-                })}
+                  </StaggerChild>
+                ))}
               </div>
             </div>
           </div>
