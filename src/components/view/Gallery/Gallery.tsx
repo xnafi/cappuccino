@@ -1,17 +1,19 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import img1 from "../../../../public/assets/OurMenu/1.jpg";
 import styles from "./Gallery.module.css";
 
 const images = [
-  "/assets/OurMenu/1.jpg",
-  "/assets/OurMenu/2.jpg",
-  "/assets/OurMenu/3.jpg",
-  "/assets/OurMenu/4.jpg",
-  "/assets/OurMenu/5.jpg",
-  "/assets/OurMenu/6.jpg",
-  "/assets/OurMenu/7.jpg",
+  "/assets/ImageGallery/1.jpg",
+  "/assets/ImageGallery/2.jpg",
+  "/assets/ImageGallery/3.jpg",
+  "/assets/ImageGallery/4.jpg",
+  "/assets/ImageGallery/5.jpg",
+  "/assets/ImageGallery/6.jpg",
+  "/assets/ImageGallery/7.jpg",
+  "/assets/ImageGallery/8.jpg",
+  "/assets/ImageGallery/9.jpg",
+  "/assets/ImageGallery/10.jpg",
 ];
 
 const getRandomIndex = (excludeIndex: number) => {
@@ -22,10 +24,10 @@ const getRandomIndex = (excludeIndex: number) => {
   return newIndex;
 };
 
-const getRandomDelay = () => `${Math.random() * 5}s`;
+const getRandomDelay = () => `${Math.random() * 10}s`;
 
 const PhotoGallery: React.FC = () => {
-  const [imageIndexes, setImageIndexes] = useState([0, 1, 2, 3, 4, 5, 6]);
+  const [imageIndexes, setImageIndexes] = useState([0, 8, 2, 3, 4, 5, 6]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -60,17 +62,19 @@ const PhotoGallery: React.FC = () => {
               alt="Gallery Image"
             />
           </div>
+          {/* image 2 */}
           {imageIndexes.slice(1).map((index, i) => (
             <div
               key={i}
-              className={`col-span-1 ${styles.fadeIn}`}
+              className={`col-span-1 ${styles.fadeIn} h-full w-full`}
               style={{ animationDelay: getRandomDelay() }}
             >
               <Image
                 src={images[index]}
                 width={400}
-                height={400}
+                height={600}
                 alt="Gallery Image"
+                className="w-full h-full object-cover"
               />
             </div>
           ))}
