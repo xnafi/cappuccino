@@ -40,7 +40,7 @@ const PhotoGallery: React.FC = () => {
   }, []);
 
   return (
-    <div className="py-12 w-full h-full lg:h-screen">
+    <div className="py-12 w-full h-full lg:h-screen overflow-hidden">
       <div className="w-full mx-auto">
         <div className="text-center">
           <SlideIn delay={0.05}>

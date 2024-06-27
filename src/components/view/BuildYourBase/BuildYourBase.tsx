@@ -8,7 +8,7 @@ import PrimaryButton from "../../../utils/PrimaryButton";
 export default function BuildYourBase() {
   return (
     <div className="bg-[#151412] flex h-full lg:h-screen w-[100vw]">
-      <div className="max-w-[1400px] mx-auto flex justify-center items-center flex-col space-y-2 px-2 md:px-4 my-10 lg:my-0F">
+      <div className="max-w-[1400px] mx-auto flex justify-center items-center flex-col space-y-2 px-2 md:px-4 my-10 lg:my-0">
         <div className="space-y-2 text-center">
           <SlideIn delay={0.5}>
             <span className="primary-text !text-white/60 text-center">
