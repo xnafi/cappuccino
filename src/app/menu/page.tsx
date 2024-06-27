@@ -10,7 +10,7 @@ export default function OurMenu() {
   return (
     <div className=" flex w-[100vw]">
       <div
-        className={`${style.bgWrap} h-[405vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh]`}
+        className={`${style.bgWrap} h-[415vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh]`}
       >
         <Image
           alt="Banner"
@@ -25,7 +25,7 @@ export default function OurMenu() {
         />
       </div>
       <div
-        className={`${style.bgText} bg-black/80 text-white flex flex-col  px-2 md:px-4 h-[405vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh] w-full items-center justify-center`}
+        className={`${style.bgText} bg-black/80 text-white flex flex-col  px-2 md:px-4 h-[415vh] md:h-[350vh] lg:h-[190vh] 2xl:h-[170vh] w-full items-center justify-center`}
       >
         <div className="flex flex-col space-y-2 text-center">
           <FadeIn delay={0.05}>

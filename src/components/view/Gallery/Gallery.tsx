@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./Gallery.module.css";
+import SlideIn from '@/utils/SlideIn';
 
 const images = [
   "/assets/ImageGallery/1.jpg",
@@ -24,7 +25,7 @@ const getRandomIndex = (excludeIndex: number) => {
   return newIndex;
 };
 
-const getRandomDelay = () => `${Math.random() * 10}s`;
+const getRandomDelay = () => `${Math.random() * 50}s`;
 
 const PhotoGallery: React.FC = () => {
   const [imageIndexes, setImageIndexes] = useState([0, 8, 2, 3, 4, 5, 6]);
@@ -42,12 +43,16 @@ const PhotoGallery: React.FC = () => {
     <div className="py-12 w-full h-full lg:h-screen">
       <div className="w-full mx-auto">
         <div className="text-center">
-          <h2 className="text-base text-white/60 font-semibold tracking-wide uppercase">
-            Photo Gallery
-          </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white/80 sm:text-4xl my-6">
-            Enjoy Our Beautiful Photos
-          </p>
+          <SlideIn delay={0.05}>
+            <h2 className="text-base text-white font-semibold tracking-wide uppercase">
+              Photo Gallery
+            </h2>
+          </SlideIn>
+          <SlideIn delay={0.06}>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white/80 sm:text-4xl my-6">
+              Enjoy Our Beautiful Photos
+            </p>
+          </SlideIn>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-5 grid-rows-2 gap-1 px-2 md:px-0 lg:mt-[2%]">
