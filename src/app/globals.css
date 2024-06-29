@@ -31,7 +31,16 @@
   .buttonPrimary {
     @apply text-sm md:text-lg border transition-transform transform hover:shadow-md;
   }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -54,3 +63,23 @@ select {
   background: transparent;
   background: #151412;
 }
+select{
+    scrollbar-width: none; /*For Firefox*/;
+    -ms-overflow-style: none;  /*For Internet Explorer 10+*/;
+}
+
+select::-webkit-scrollbar { /*For WebKit Browsers*/
+    width: 0;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+.ui-datepicker {
+    background:black;
+    border: 1px solid #ccc;
+    color: white;
+}
+
+
+
