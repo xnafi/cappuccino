@@ -3,6 +3,7 @@ import React from "react";
 import banner from "../../../../public/assets/banner/home-1-slider.jpg";
 import style from "./banner.module.css";
 import FadeIn from "@/utils/FadeIn";
+import Link from "next/link";
 
 const Banner: React.FC = () => {
   return (
@@ -34,9 +35,9 @@ const Banner: React.FC = () => {
             </span>
           </FadeIn>
           <FadeIn delay={1}>
-            <button className="cursor-pointer uppercase bg-[#6F4E37] font-bold px-10 py-2 border transition-all duration-300 ease-in-out hover:shadow-md transform hover:scale-105 !z-0">
+            <Link href='/menu' className="cursor-pointer uppercase bg-[#6F4E37] font-bold px-10 py-2 border transition-all duration-300 ease-in-out hover:shadow-md transform hover:scale-105 !z-0">
               EXPLORE
-            </button>
+            </Link>
           </FadeIn>
         </div>
       </div>

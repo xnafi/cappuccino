@@ -177,10 +177,8 @@ export default function TableBook() {
           </form>
         </FadeIn>
 
-        {/*  */}
-        <FadeIn delay={0.8}>
-          <TableBookTopics />
-        </FadeIn>
+        {/* topics items */}
+        <TableBookTopics />
       </div>
     </div>
   );
