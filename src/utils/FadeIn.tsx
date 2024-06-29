@@ -31,6 +31,7 @@ const FadeIn: React.FC<FadeInProps> = ({ children, delay = 0 }) => {
       variants={fadeIn}
       custom={delay}
       viewport={{ once: true, amount: 0.5 }}
+      className="w-full"
     >
       {children}
     </motion.div>

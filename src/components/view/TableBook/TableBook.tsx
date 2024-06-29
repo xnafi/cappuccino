@@ -5,6 +5,7 @@ import SelectComponent from "@/utils/SelectComponent";
 import { MdGroups2 } from "react-icons/md";
 import { MdOutlineAccessTime } from "react-icons/md";
 import Swal from "sweetalert2";
+import TableBookTopics from "./TableBookTopics";
 
 export default function TableBook() {
   const Swal = require("sweetalert2");
@@ -99,7 +100,6 @@ export default function TableBook() {
        ${formData.date} And 
        The Time Is ${formData.time}`,
       icon: "question",
-
     });
     Swal.fire({
       title: "You Are Selected",
@@ -119,7 +119,6 @@ export default function TableBook() {
         Swal.fire("Changes are not saved", "", "info");
       }
     });
-    
   };
 
   return (
@@ -131,51 +130,57 @@ export default function TableBook() {
               Looking For Explore?
             </span>
           </FadeIn>
-          <FadeIn delay={0.7}>
+          <FadeIn delay={0.6}>
             <span className="headings">Book Your Table</span>
           </FadeIn>
         </div>
         {/* form */}
-        <form
-          className="flex flex-col md:flex-row w-[100%] items-center gap-10 justify-between !mt-10"
-          onSubmit={handleSubmit}
-        >
-          {/* select persons */}
-          <SelectComponent
-            options={options}
-            icon={<MdGroups2 />}
-            value={formData.people}
-            onChange={handleSelectChange("people")}
-          />
-          <span className="sub-heading font-bold">FOR</span>
-          {/* select date */}
-          <div
-            className={`styles["custom-date-input"] border py-4 px-4 w-full`}
+        <FadeIn delay={0.7}>
+          <form
+            className="flex flex-col lg:flex-row w-[100%] items-center gap-10 justify-between !mt-10"
+            onSubmit={handleSubmit}
           >
-            <input
-              type="date"
-              className="w-full !bg-[#151412] !text-white focus:outline-none cursor-pointer"
-              min={getTodayDate()}
-              value={formData.date}
-              onChange={handleDateChange}
+            {/* select persons */}
+            <SelectComponent
+              options={options}
+              icon={<MdGroups2 />}
+              value={formData.people}
+              onChange={handleSelectChange("people")}
             />
-          </div>
-          <span className="sub-heading font-bold">AT</span>
-          {/* select time */}
-          <SelectComponent
-            options={timeOptions}
-            icon={<MdOutlineAccessTime />}
-            value={formData.time}
-            onChange={handleSelectChange("time")}
-          />
-          <button
-            type="submit"
-            className="cursor-pointer uppercase bg-[#6F4E37] font-bold px-10 py-2 border transition-all duration-300 ease-in-out hover:shadow-md transform hover:scale-105 !z-0"
-          >
-            SUBMIT
-          </button>
-        </form>
+            <span className="sub-heading font-bold">FOR</span>
+            {/* select date */}
+            <div
+              className={`styles["custom-date-input"] border py-4 px-4 w-full`}
+            >
+              <input
+                type="date"
+                className="w-full !bg-[#151412] !text-white focus:outline-none cursor-pointer"
+                min={getTodayDate()}
+                value={formData.date}
+                onChange={handleDateChange}
+              />
+            </div>
+            <span className="sub-heading font-bold">AT</span>
+            {/* select time */}
+            <SelectComponent
+              options={timeOptions}
+              icon={<MdOutlineAccessTime />}
+              value={formData.time}
+              onChange={handleSelectChange("time")}
+            />
+            <button
+              type="submit"
+              className="cursor-pointer uppercase bg-[#6F4E37] font-bold px-10 py-2 border transition-all duration-300 ease-in-out hover:shadow-md transform hover:scale-105 !z-0"
+            >
+              SUBMIT
+            </button>
+          </form>
+        </FadeIn>
+
         {/*  */}
+        <FadeIn delay={0.8}>
+          <TableBookTopics />
+        </FadeIn>
       </div>
     </div>
   );
