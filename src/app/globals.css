@@ -62,31 +62,31 @@ h1 {
 select {
   background: transparent;
   background: #151412;
+  color: white;
 }
-select{
-    scrollbar-width: none; /*For Firefox*/;
-    -ms-overflow-style: none;  /*For Internet Explorer 10+*/;
+select {
+  scrollbar-width: none; /*For Firefox*/
+  -ms-overflow-style: none; /*For Internet Explorer 10+*/
+  color: white;
 }
 
-select::-webkit-scrollbar { /*For WebKit Browsers*/
-    width: 0;
+select::-webkit-scrollbar {
+  /*For WebKit Browsers*/
+  width: 0;
 }
 
 ::-webkit-calendar-picker-indicator {
-    filter: invert(1);
+  filter: invert(1);
 }
 .ui-datepicker {
-    background:black;
-    border: 1px solid #ccc;
-    color: white;
+  background: black;
+  border: 1px solid #ccc;
+  color: white;
 }
-div:where(.swal2-container).swal2-center>.swal2-popup {
-    grid-column: 2;
-    grid-row: 2;
-    place-self: center center;
-    background: black;
-    color: white;
+div:where(.swal2-container).swal2-center > .swal2-popup {
+  grid-column: 2;
+  grid-row: 2;
+  place-self: center center;
+  background: black;
+  color: white;
 }
-
-
-

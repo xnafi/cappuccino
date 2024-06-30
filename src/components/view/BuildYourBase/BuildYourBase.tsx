@@ -16,7 +16,7 @@ export default function BuildYourBase() {
             </span>
           </SlideIn>
           <SlideIn delay={0.7}>
-            <span className="headings">COFFEE BUILD YOUR BASE</span>
+            <span className="headings !text-white">COFFEE BUILD YOUR BASE</span>
           </SlideIn>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-5 pt-[3%] mx-auto">
