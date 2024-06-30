@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import Image from "next/image";
 import logo from "../../../public/assets/logo/logo.png";
 import {
@@ -10,7 +10,6 @@ import {
 } from "react-hook-form";
 import style from "../../components/view/Banner.tsx/banner.module.css";
 import bg from "../../../public/assets/img2.jpg";
-import FadeIn from "@/utils/FadeIn";
 
 const LoginPage = () => {
   type Inputs = {
@@ -59,7 +58,9 @@ const LoginPage = () => {
           <div className="text-white">
             <div className="mb-6 flex flex-col items-center ">
               <Image src={logo} width={150} height={150} priority alt="" />
-              <span className="text-gray-300 mt-2">Enter Login Details</span>
+              <span className="text-gray-300 mt-2 font-bold uppercase">
+                Enter Login Details
+              </span>
             </div>
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -69,7 +70,7 @@ const LoginPage = () => {
               <div className="mb-4 text-lg">
                 <input
                   className="rounded-3xl border bg-transparent bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-white shadow-lg outline-none backdrop-blur-md"
-                  type="text"
+                  type="email"
                   placeholder="id@email.com"
                   {...register("email", {
                     required: "Email is required",

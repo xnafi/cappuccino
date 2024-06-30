@@ -203,10 +203,10 @@ const Navbar = () => {
                     Login
                   </span>
                 </Link>
-                <Link href="/signUp">
+                <Link href="/sign-up">
                   <span
                     className={`px-3 py-2 rounded-md text-md font-medium ${
-                      isActive("/signUp")
+                      isActive("/sign-up")
                         ? "bg-gray-900"
                         : "text-gray-300 hover:bg-white/10 hover:text-white"
                     }`}
@@ -282,10 +282,10 @@ const Navbar = () => {
               Login
             </span>
           </Link>
-          <Link href="/signUp" onClick={handleClose}>
+          <Link href="/sign-up" onClick={handleClose}>
             <span
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive("/signUp")
+                isActive("/sign-up")
                   ? "bg-gray-900"
                   : "text-gray-300 hover:bg-white/10 hover:text-white"
               }`}
