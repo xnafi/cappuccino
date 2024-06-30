@@ -12,7 +12,7 @@ import {
 export default function contact() {
   return (
     <div className="bg-[#151412] py-12 h-full md:h-screen flex flex-col items-center justify-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-[100px] lg:mt-0">
         <div className="text-center">
           <h2 className="text-base text-white/70 font-semibold tracking-wide uppercase">
             Contact Us

@@ -49,7 +49,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: isVisible ? 0 : -100 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
-      className="bg-[#6F4E19]/90 text-white fixed top-0 w-full transition-all duration-500 z-[999]"
+      className="bg-[#6F4E19]/50 text-white fixed top-0 w-full transition-all duration-500 z-[999] backdrop-blur-md"
     >
       <div className="max-w-[1400px] mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-[100] w-full">
@@ -148,7 +148,7 @@ const Navbar = () => {
                       height: isHovered ? "auto" : 0,
                     }}
                     transition={{ duration: 0.3 }}
-                    className="absolute bg-gray-800 mt-1 w-48 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden"
+                    className="absolute bg-[#6F4E19]/90 mt-1 w-48 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden"
                   >
                     <div className="py-1">
                       <Link href="/menu">

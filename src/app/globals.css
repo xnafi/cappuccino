@@ -80,6 +80,13 @@ select::-webkit-scrollbar { /*For WebKit Browsers*/
     border: 1px solid #ccc;
     color: white;
 }
+div:where(.swal2-container).swal2-center>.swal2-popup {
+    grid-column: 2;
+    grid-row: 2;
+    place-self: center center;
+    background: black;
+    color: white;
+}
 
 
 
